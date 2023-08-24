@@ -133,6 +133,7 @@ npm query ":type(git)" | jq 'map(.name)' | xargs -I {} npm why {}
   },
   ...
 ```
+
 ### Package lock only mode
 
 If package-lock-only is enabled, only the information in the package
