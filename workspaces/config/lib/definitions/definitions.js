@@ -1185,6 +1185,34 @@ define('local-address', {
   flatten,
 })
 
+define('sbom-format', {
+  default: null,
+  type: [
+    'cyclonedx',
+    'spdx',
+  ],
+  description: `
+    SBOM format to use when generating SBOMs.
+  `,
+  flatten,
+})
+
+define('package-type', {
+  default: 'library',
+  type: [
+    'library',
+    'application',
+    'framework',
+    'firmware',
+  ],
+  description: `
+    The package type to associate with the root package when generating SBOMs.
+    For SPDX, this is the value for the \`primaryPackagePurpose\` fieled. For
+    CycloneDX, this is the value for the \`type\` field.
+  `,
+  flatten,
+})
+
 define('location', {
   default: 'user',
   short: 'L',
