@@ -697,9 +697,20 @@ const hasParent = (node, compareNodes) => {
   // All it takes is one so we loop and return on the first hit
   for (const compareNode of compareNodes) {
     // follows logical parent for link anscestors
-    if (node.isTop && (node.resolveParent === compareNode)) {
-      return true
+    if (node.isTop) {
+      if (node.resolveParent === compareNode) {
+        return true
+      } else {
+        // Top-level nodes have no edgesIn, so check the edgesOut
+        // of the parent to see if any of them are links to this node
+        for (const edge of compareNode.edgesOut.values()) {
+          if (edge.to === node || edge.to?.target === node) {
+            return true
+          }
+        }
+      }
     }
+
     // follows edges-in to check if they match a possible parent
     for (const edge of node.edgesIn) {
       if (edge && edge.from === compareNode) {
