@@ -1,5 +1,11 @@
 # Changelog
 
+## [10.1.1](https://github.com/npm/cli/compare/v10.1.0...v10.1.1) (2023-09-11)
+
+### Bug Fixes
+
+* [`fb1b674`](https://github.com/npm/cli/commit/fb1b6741bd52d865b8f8a93ad3fd6c8afa758b6a) [#6758](https://github.com/npm/cli/pull/6758) deprecate: ignore implicit workspace mode (#6758) (@wraithgar)
+
 ## [10.1.0](https://github.com/npm/cli/compare/v10.0.0...v10.1.0) (2023-09-08)
 
 ### Features
